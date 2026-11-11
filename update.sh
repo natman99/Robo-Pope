@@ -22,7 +22,7 @@ fi
 echo "Deploying tag: $latest"
 git checkout "$latest"
 
-bun install
+cargo build --release
 
 pm2 startOrRestart ecosystem.config.js || pm2 restart index
 
